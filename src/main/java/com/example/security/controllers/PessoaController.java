@@ -15,7 +15,7 @@ public class PessoaController {
     @Autowired
     private PessoaService pessoaService;
 
-    public PessoaModels<> add(@RequestBody PessoaModels pessoaModels){
+    public PessoaModels adicionar(@RequestBody PessoaModels pessoaModels){
         return pessoaService.adicionar(pessoaModels);
     }
 }
