@@ -16,7 +16,7 @@ public class ProdutoController {
 
     @GetMapping
     public List<ProdutoModels> findAll(){
-        return  produtoService.findAll();
+        return  produtoService.buscaTudo();
     }
     @PostMapping
     public ProdutoModels criarPessoa(@RequestBody ProdutoModels produtoModels){

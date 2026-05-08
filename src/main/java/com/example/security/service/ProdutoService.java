@@ -21,11 +21,4 @@ public class ProdutoService {
         return produtoRepository.findAll();
     }
 
-    public ProdutoModels buscaId(Long id){
-        return produtoRepository.findById(id).orElse(null);
-    }
-
-    public List<ProdutoModels> findAll() {
-        return List.of();
-    }
 }
