@@ -1,21 +1,20 @@
 package com.example.security.controllers;
 
-import com.example.security.models.PessoaModels;
-import com.example.security.service.PessoaService;
+import com.example.security.models.ProdutoModels;
+import com.example.security.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping(name = "/mybols")
-public class PessoaController {
+public class ProdutoController {
 
     @Autowired
-    private PessoaService pessoaService;
+    private ProdutoService produtoService;
 
-    public PessoaModels adicionar(@RequestBody PessoaModels pessoaModels){
-        return pessoaService.adicionar(pessoaModels);
+    public ProdutoModels adicionar(@RequestBody ProdutoModels produtoModels){
+        return produtoService.adicionar(produtoModels);
     }
 }

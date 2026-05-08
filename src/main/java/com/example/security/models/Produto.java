@@ -1,9 +1,10 @@
 package com.example.security.models;
 
-import com.example.security.Enum.PessoaEnum;
+import com.example.security.Enum.ProdutoEnum;
 import jakarta.persistence.*;
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -11,19 +12,21 @@ import java.util.List;
 
 @Entity
 @Table(name = "User_table")
-public class User implements UserDetails {
+public class Produto implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String login;
     private String password;
-    private PessoaEnum pessoaEnum;
+    private ProdutoEnum produtoEnum;
 
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of();
+        if(this.produtoEnum == ProdutoEnum.ADMIN) return
+                List.of(new SimpleGrantedAuthority("ADMIN"), new SimpleGrantedAuthority("USER"));
+        else return  List.of(new SimpleGrantedAuthority("USER"));
     }
 
     @Override

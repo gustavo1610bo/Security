@@ -1,5 +1,5 @@
 package com.example.security.Enum;
 
-public enum PessoaEnum {
+public enum ProdutoEnum {
     ADMIN,USER
 }
