@@ -25,4 +25,7 @@ public class ProdutoService {
         return produtoRepository.findById(id).orElse(null);
     }
 
+    public List<ProdutoModels> findAll() {
+        return List.of();
+    }
 }
